@@ -33,17 +33,17 @@ def get_player_move(board, player):
             col = int(input("  Enter column (1-3): ")) - 1
 
             if row not in range(3) or col not in range(3):
-                print("  ❌ Invalid input! Row and column must be between 1 and 3.\n")
+                print("   Invalid input! Row and column must be between 1 and 3.\n")
                 continue
 
             if board[row][col] != " ":
-                print("  ❌ That cell is already taken! Try again.\n")
+                print("   That cell is already taken! Try again.\n")
                 continue
 
             return row, col
 
         except ValueError:
-            print("  ❌ Please enter numbers only.\n")
+            print("   Please enter numbers only.\n")
 
 
 def make_move(board, row, col, player):
@@ -95,7 +95,7 @@ def play_again():
 
 def display_scores(scores):
     """Display current scores."""
-    print("\n📊 Scoreboard:")
+    print("\n Scoreboard:")
     print(f"  Player X: {scores['X']} wins")
     print(f"  Player O: {scores['O']} wins")
     print(f"  Draws    : {scores['Draw']}\n")
@@ -124,13 +124,13 @@ def main():
 
             if check_winner(board, current_player):
                 display_board(board)
-                print(f"🏆 Player {current_player} wins! Congratulations!\n")
+                print(f" Player {current_player} wins! Congratulations!\n")
                 scores[current_player] += 1
                 game_over = True
 
             elif check_draw(board):
                 display_board(board)
-                print("🤝 It's a draw! Well played by both!\n")
+                print(" It's a draw! Well played by both!\n")
                 scores["Draw"] += 1
                 game_over = True
 
@@ -140,7 +140,7 @@ def main():
         display_scores(scores)
 
         if not play_again():
-            print("\nThanks for playing! Goodbye! 👋\n")
+            print("\nThanks for playing! Goodbye! \n")
             break
 
 
